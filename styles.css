@@ -1,0 +1,220 @@
+html{
+    overflow-x: hidden; 
+}
+body{
+    background-color: rgba(0, 0, 0, 0.85); 
+    background-image: url("bgs/bg0.jpg"); 
+    background-repeat: no-repeat; 
+    background-size:cover; 
+    background-attachment: fixed; 
+}
+.top{
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -20px; /* Adjusting margin to cover the top section */
+    padding-top: 1%; /* This is to lower the buttons a little bit */
+    align-items: center; 
+    text-align: center;
+    min-height: 100%; /* Keep the height consistent */
+    background-color: rgba(62, 62, 62, 0.85); 
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5); 
+}
+.nav{
+    margin-left: 10px; /* Separate the buttons */
+    width: 60px;
+    user-select: none; /* I dont want the user to be able to select these buttons */
+    color: white; 
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    border-bottom: 3px solid rgba(255, 0, 0, 0.70);
+}
+.nav:hover{ /* On hover */
+    color: darkgray; 
+    border-bottom-color: rgba(94, 255, 0, 0.7); 
+    animation-duration: 0.5s; 
+    animation-name: colorpan;
+    transform: translateY(5px); 
+}
+.nav:active{
+    transform: translateY(5px); 
+    color: darkgray; 
+    border-bottom-color: rgba(94, 255, 0, 0.7); 
+    box-shadow: 1px 15px 10px -9px rgba(94, 255, 0, 0.7); 
+}
+
+@keyframes colorpan{ 
+    from{
+        transform: translateY(0);
+        color: white;
+        border-bottom-color: rgba(255, 0, 0, 0.70);
+   }
+    to{
+        transform: translateY(5px);
+        color: darkgray;
+        border-bottom-color: rgba(94, 255, 0, 0.7);
+   }
+}
+img.icon{
+    -webkit-user-drag: none; /* This only works sometimes like ??? */
+    user-select: none; 
+    border: 5px double rgba(255, 255, 255, 0.514);
+    border-radius: 50%;
+}
+img.icon:hover{ /* Spin!!! */
+    animation-duration: 1s;
+    animation-name: rot;
+}
+@keyframes rot{
+    from{
+        transform: rotate(0deg);
+   }
+    to{
+        transform: rotate(360deg);
+    }
+}
+p{
+    user-select: none; 
+    text-align: right; 
+    color: white; 
+    text-shadow: 2px 2px rgba(255, 0, 0, 0.7); 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3%;
+    border-radius: 20px;
+    border: 2px dashed gray;
+}
+h1{
+    text-align: center;
+    user-select: none;
+    color: rgb(255, 247, 189);
+    text-shadow:5px 5px rgba(255, 0, 43, 0.315);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+}
+section.contentwrapper{ 
+    display: grid;
+    gap: 1rem; /* Gap between columns */
+    grid-template-columns: repeat(12, minmax(10px, 1fr)); /* Make 12 columns */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+div.text{
+    grid-column-start: 2;
+    grid-column-end: 9;
+}
+div.titler{
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    border-right: 5px solid red;
+    border-left: 5px solid red;
+    background-color: rgba(0, 0, 0, 0.616);
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 1);
+}
+.titler:hover{
+    animation-name: xd;
+    animation-duration: 1s;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+@keyframes xd {
+    from{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    to{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+.thinger{
+    text-align: left;
+    position: relative;
+    left: 20px;
+    text-shadow: 0px 0px rgba(0, 0, 0, 0);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+}
+.five{
+    grid-column: span 2 / auto;
+}
+.twelve{
+    grid-column: span 12 / auto;
+}
+@media screen and (max-width: 962px) {
+    .header{
+        font-size: 30px;
+    }
+    .five{
+        grid-column: span 12 / auto;
+    }
+    .thinger{
+        font-size: 40px;
+    }
+    div.text{
+        grid-column-start: 0;
+        grid-column-end: 12;
+    }
+    #par{
+        font-size: 35px;
+    }
+}
+@media screen and (max-width: 601px) {
+    .header{
+        font-size: 20px;
+    }
+    .five{
+        grid-column: span 12 / auto;
+    }
+    .four{
+        grid-column: span 12 / auto;
+    }
+    .thinger{
+        font-size: 30px;
+    }
+    div.text{
+        grid-column-start: 0;
+        grid-column-end: 12;
+    }
+    #par{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 280px){ /* Fold media query */
+    .header{
+        font-size: 20px;
+    }
+    .five{
+        grid-column: span 12 / auto;
+    }
+    .four{
+        grid-column: span 12 / auto;
+    }
+    .thinger{
+        font-size: 30px;
+    }
+    div.text{
+        grid-column-start: 0;
+        grid-column-end: 13;
+    }
+    #par{
+        font-size: 20px;
+    }
+    #ffs{
+        position: relative;
+        left: 14px;
+    }
+}
+h6{
+    color: rgba(255, 255, 255, 0.171);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
